@@ -23,11 +23,15 @@ export default function Home() {
   const fetchGames = async (currentPage, selectedGenre, selectedPlatform) => {
     setLoading(true);
     try {
-      let url = `https://api.rawg.io/api/games?key=f4786ea3a2664b0c882c52954b1c6307&page=${currentPage}`;
+      let url = `https://api.rawg.io/api/games?key=5cd0c7ac120243af92de436eb06c6ccc&page=${currentPage}`;
 
       // Build the url based on selected genre and platform
       if (selectedGenre && selectedGenre !== "All") {
         url += `&genres=${encodeURIComponent(selectedGenre.toLowerCase())}`;
+      }
+
+      if (selectedGenre === "RPG") {
+        url += `&genres=role-playing-games-rpg`;
       }
 
       if (selectedPlatform && selectedPlatform !== "all") {
@@ -59,7 +63,7 @@ export default function Home() {
 
     // Fetch games based on the search query
     try {
-      let url = `https://api.rawg.io/api/games?key=f4786ea3a2664b0c882c52954b1c6307&search=${encodeURIComponent(
+      let url = `https://api.rawg.io/api/games?key=5cd0c7ac120243af92de436eb06c6ccc&search=${encodeURIComponent(
         query
       )}`;
       const response = await fetch(url);

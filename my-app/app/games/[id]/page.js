@@ -18,7 +18,7 @@ const GameDetails = () => {
       const fetchGameDetails = async () => {
         try {
           // Fetch game details
-          const response = await fetch(`https://api.rawg.io/api/games/${id}?key=f4786ea3a2664b0c882c52954b1c6307`);
+          const response = await fetch(`https://api.rawg.io/api/games/${id}?key=5cd0c7ac120243af92de436eb06c6ccc`);
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
           }
@@ -27,7 +27,7 @@ const GameDetails = () => {
 
 
           // Fetch screenshots for the game
-          const screenshotsResponse = await fetch(`https://api.rawg.io/api/games/${id}/screenshots?key=f4786ea3a2664b0c882c52954b1c6307`);
+          const screenshotsResponse = await fetch(`https://api.rawg.io/api/games/${id}/screenshots?key=5cd0c7ac120243af92de436eb06c6ccc`);
           if (!screenshotsResponse.ok) {
             throw new Error(`HTTP error! Status: ${screenshotsResponse.status}`);
           }
@@ -36,7 +36,7 @@ const GameDetails = () => {
 
 
           // Fetch trailer for the game
-          const trailerResponse = await fetch(`https://api.rawg.io/api/games/${id}/movies?key=f4786ea3a2664b0c882c52954b1c6307`);
+          const trailerResponse = await fetch(`https://api.rawg.io/api/games/${id}/movies?key=5cd0c7ac120243af92de436eb06c6ccc`);
           if (!trailerResponse.ok) {
             throw new Error(`HTTP error! Status: ${trailerResponse.status}`);
           }
@@ -160,7 +160,7 @@ const GameDetails = () => {
               url={trailer} // MP4 URL
               className="w-full h-72 rounded-lg"
               controls
-              playing={false}
+              playing={true}
               width="100%" 
               height="auto"
             />
